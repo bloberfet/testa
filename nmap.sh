@@ -1,5 +1,6 @@
 #!/bin/bash
-#If concerned about causing disruptions on a target, then remove --min-rate=5000 
+# Created this script to automate and organize nmap subnet scanning
+# If concerned about causing disruptions on a target, then remove --min-rate=5000 
 
 # nmap Host Discovery 
 mkdir step1_host-discovery && cd step1_host-discovery
@@ -17,5 +18,5 @@ for ip in $(cat ../../nmap_host-discovery|grep 'scan report'|awk '{print $5}');d
 mkdir all_targets && cd mkdir all_targets
 for ip in $(ls ../nmap*|awk -F '_' '{print $3}');do mkdir $ip && cp ../nmap_sCV_$ip $ip;done
 
-# Clean up
+# Organize notes and clean up
 cd ../ && mv all_targets ../../../ && cd ../../../ && rm -rf step1_host-discovery
