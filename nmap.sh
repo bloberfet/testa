@@ -1,4 +1,5 @@
 #!/bin/bash
+#If concerned about causing disruptions on a target, then remove --min-rate=5000 
 
 # nmap Host Discovery 
 mkdir step1_host-discovery && cd step1_host-discovery
